@@ -1,0 +1,192 @@
+/* styles.scss */
+
+/* Define a mixin for common styles */
+@mixin menu-item {
+  color: #d4d4d4;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  width: 100%;
+
+  .menu-icon {
+    font-size: 24px;
+    margin-right: 1rem;
+    color: rgb(79, 70, 229);
+  }
+
+  .menu-text {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.sidenav-menu-item {
+  align-items: center;
+  box-sizing: border-box;
+  color: #d1d5db;
+  cursor: pointer;
+  // display: flex;
+  // flex-direction: row;
+  min-height: 40px;
+  padding: 0rem 0.5rem;
+  position: relative;
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-weight: var(--vex-sidenav-item-font-weight);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
+  margin-bottom: 0.5rem;
+}
+
+.sidebar {
+  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #111827;
+  width: 15%;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  // border-radius: 10%;
+  overflow-x: hidden;
+  // transition: transform 0.3s;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  width: 90% !important;
+  @include menu-item;
+
+  &:hover {
+    // box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.5);
+    background-color: rgb(99 102 241 / 15%);
+    color: #6c6c6c;
+
+  }
+
+  &.active {
+    color: #000000;
+    background-color: rgb(99 102 241 / 20%);
+  }
+
+  &.active:hover {
+
+  }
+}
+
+
+.sub-menu-list-item span{
+  margin-left: 2.5rem;
+}
+
+
+
+
+
+.hideSidebar {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Define the final state when showing */
+.showSidebar {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.sidenav-toolbar {
+  align-items: center;
+  background: #111827;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+  white-space: nowrap;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  justify-content: center;
+}
+.vex-sidenav-toolbar__headline {
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: .025em;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(.25,.8,.25,1);
+  padding-inline-start: 1rem;
+  margin: 0px;
+  color: #FFFF;
+}
+.vex-sidenav-toolbar__container {
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.vex-sidenav-search__container{
+  background: #111827;
+  z-index: 10;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  padding-bottom: .75rem;
+}
+
+.vex-sidenav-search {
+  display: flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: #ffffff1a;
+  padding: 0.5rem 0.5rem 0.5rem 1rem !important;
+  color: #ffffff4d;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(0,0,.2,1);
+}
+.vex-sidenav-search__icon{
+  font-size: 1.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    line-height: 1.25rem;
+}
+.vex-sidenav-search__placeholder{
+    white-space: nowrap;
+    font-size: .75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+.vex-sidenav-toolbar__divider{
+  height: 1px;
+  background: rgb(255 255 255 / .12);
+}

@@ -1,0 +1,141 @@
+<div class="sidebar" [ngClass]="{ 'showSidebar': isSidebarVisible, 'hideSidebar': !isSidebarVisible }" [@fadeInOut]>
+  <div class="vex-sidenav-toolbar__container">
+    <div class="sidenav-toolbar flex-none flex items-center">
+      <img class="w-6 select-none flex-none" src="../../../assets/logo.svg" style="width: 1.5rem;">
+      <h2 class="vex-sidenav-toolbar__headline flex-auto"> VEX </h2>
+    </div>
+    <div class="vex-sidenav-search__container ng-star-inserted" >
+      <div class="mat-ripple vex-sidenav-search relative">
+        <mat-icon role="img" svgicon="mat:search" class="mat-icon notranslate flex-none vex-sidenav-search__icon mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="search" data-mat-icon-namespace="mat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+            </path>
+          </svg></mat-icon>
+        <div  class="flex-auto vex-sidenav-search__placeholder"> Quick Search </div>
+      </div>
+    </div>
+    <div class="vex-sidenav-toolbar__divider"></div>
+  </div>
+  <ul>
+    <li class="sidenav-menu-item">
+      <a routerLink="/" routerLinkActive="active" (click)="toggleSubmenu()">
+        <span class="menu-icon material-icons">dashboard</span>
+        <span class="menu-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="sidenav-menu-item">
+      <a routerLinkActive="active" (click)="toggleAdminstrationMenu()">
+        <span class="menu-icon material-icons">account_circle</span>
+        <span class="menu-text">Administration</span>
+        <span class="sub-menu-icon" [ngClass]="{ 'sub-menu-open': isAdministrationMenuOpen }">
+          <mat-icon>{{ isAdministrationMenuOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+        </span>
+      </a>
+      <ul *ngIf="isAdministrationMenuOpen" class="sub-menu">
+        <li class="sub-menu-list">
+          <a routerLink="/admin-master" routerLinkActive="active" class="sub-menu-list-item">
+            <span class="menu-text">- &nbsp; Admin Masters</span>
+          </a>
+        </li>
+        <li class="sub-menu-list">
+          <a routerLink="/resource-master" routerLinkActive="active" class="sub-menu-list-item">
+            <span class="menu-text">- &nbsp; Resource Masters</span>
+          </a>
+        </li>
+        <li class="sub-menu-list">
+          <a routerLink="/plan-master" routerLinkActive="active" class="sub-menu-list-item">
+            <span class="menu-text">- &nbsp; Plan Masters</span>
+          </a>
+        </li>
+        <li class="sub-menu-list">
+          <a routerLink="/incident-master" routerLinkActive="active" class="sub-menu-list-item">
+            <span class="menu-text">- &nbsp; Incident Masters</span>
+          </a>
+        </li>
+        <li class="sub-menu-list">
+          <a routerLink="/notification-setting" routerLinkActive="active" class="sub-menu-list-item">
+            <span class="menu-text">- &nbsp; Notification Setting</span>
+          </a>
+        </li>
+        <li class="sub-menu-list">
+          <a routerLink="/department" routerLinkActive="active" class="sub-menu-list-item">
+            <span class="menu-text">- &nbsp; Department</span>
+          </a>
+        </li>
+        <li class="sub-menu-list">
+          <a routerLink="/user-management" routerLinkActive="active" class="sub-menu-list-item">
+            <span class="menu-text"> - &nbsp; Users</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="sidenav-menu-item">
+      <a routerLinkActive="active" (click)="toggleSubmenu()">
+        <span class="menu-icon material-icons">poll</span>
+        <span class="menu-text">Resource</span>
+        <span class="sub-menu-icon" [ngClass]="{ 'sub-menu-open': isResourceOpen }">
+          <mat-icon>{{ isResourceOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+        </span>
+      </a>
+      <ul *ngIf="isResourceOpen" class="sub-menu">
+        <li class="sub-menu-list">
+          <a routerLink="/dashboard" routerLinkActive="active" class="sub-menu-list-item"><span
+              class="menu-text">Details</span></a>
+        </li>
+        <li class="sub-menu-list"><a routerLink="/dashboard/messages" routerLinkActive="active"
+            class="sub-menu-list-item"><span class="menu-text">Messages</span></a></li>
+      </ul>
+    </li>
+    <li class="sidenav-menu-item">
+      <a routerLinkActive="active" (click)="toggleSubmenu()">
+        <span class="menu-icon material-icons">timeline</span>
+        <span class="menu-text">Plan</span>
+        <span class="sub-menu-icon" [ngClass]="{ 'sub-menu-open': isPlanOpen }">
+          <mat-icon>{{ isPlanOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+        </span>
+      </a>
+      <ul *ngIf="isPlanOpen" class="sub-menu">
+        <li class="sub-menu-list">
+          <a routerLink="/dashboard" routerLinkActive="active" class="sub-menu-list-item"><span
+              class="menu-text">Details</span></a>
+        </li>
+        <li class="sub-menu-list"><a routerLink="/dashboard/messages" routerLinkActive="active"
+            class="sub-menu-list-item"><span class="menu-text">Messages</span></a></li>
+      </ul>
+    </li>
+    <li class="sidenav-menu-item">
+      <a routerLinkActive="active" (click)="toggleSubmenu()">
+        <span class="menu-icon material-icons">markunread</span>
+        <span class="menu-text">Response</span>
+        <span class="sub-menu-icon" [ngClass]="{ 'sub-menu-open': isGISModuleOpen }">
+          <mat-icon>{{ isGISModuleOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+        </span>
+      </a>
+      <ul *ngIf="isGISModuleOpen" class="sub-menu">
+        <li class="sub-menu-list">
+          <a routerLink="/dashboard" routerLinkActive="active" class="sub-menu-list-item"><span
+              class="menu-text">Details</span></a>
+        </li>
+        <li class="sub-menu-list"><a routerLink="/dashboard/messages" routerLinkActive="active"
+            class="sub-menu-list-item"><span class="menu-text">Messages</span></a></li>
+      </ul>
+    </li>
+    <li class="sidenav-menu-item">
+      <a routerLinkActive="active" (click)="toggleSubmenu()">
+        <span class="menu-icon material-icons">settings</span>
+        <span class="menu-text">GIS Module</span>
+        <span class="sub-menu-icon" [ngClass]="{ 'sub-menu-open': isResponseOpen }">
+          <mat-icon>{{ isResponseOpen ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+        </span>
+      </a>
+      <ul *ngIf="isResponseOpen" class="sub-menu">
+        <li class="sub-menu-list">
+          <a routerLink="/dashboard" routerLinkActive="active" class="sub-menu-list-item"><span
+              class="menu-text">Details</span></a>
+        </li>
+        <li class="sub-menu-list"><a routerLink="/dashboard/messages" routerLinkActive="active"
+            class="sub-menu-list-item"><span class="menu-text">Messages</span></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>

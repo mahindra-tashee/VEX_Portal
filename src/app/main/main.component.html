@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="app-header" >
+    <div [ngClass]="isSidebarVisible ? 'header-sidenav' : ''">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div [ngClass]="isSidebarVisible ? 'main-header' : 'header-without-sidebar'">
+      <app-header></app-header>
+    </div>
+  </div>
+</div>
+
+ <div class="content" [ngClass]="isSidebarVisible ? 'with-sidebar' : 'without-sidebar'">
+  <!-- Your main content goes here -->
+  <router-outlet></router-outlet>
+</div>

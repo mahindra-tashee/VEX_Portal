@@ -1,0 +1,96 @@
+<div class="main-dashboard">
+    <div class="main-dashboard-row">
+        <div class="main-dashboard-col">
+            <div
+                class="card-1 h-full flex flex-col justify-between relative hover:shadow-lg transition duration-200 ease-out-swift">
+                <div class="flex p-6 flex items-center justify-between gap-6 pb-0">
+                    <div class="ng-tns-c3022845353-115">
+                        <h2 class="headline font-bold m-0 ">92.4k</h2>
+                        <p class="caption text-secondary m-0 ">Incidents By Category</p>
+                    </div>
+                    <div
+                        class="rounded-full w-12 h-12 flex items-center justify-center text-primary-600 bg-primary-600/10">
+
+                    </div>
+                </div>
+                <div class="rounded-b overflow-hidden">
+                    <div>
+                        <apx-chart [series]="chartSeries" [chart]="chartDetails">
+                        </apx-chart>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="card-2 h-full flex flex-col justify-between relative hover:shadow-lg transition duration-200 ease-out-swift">
+                <div class="flex p-6 flex items-center justify-between gap-6 pb-0">
+                    <div class="ng-tns-c3022845353-115">
+                        <h2 class="headline font-bold m-0 ">40k</h2>
+                        <p class="caption text-secondary m-0 ">Weekly Incidents</p>
+                    </div>
+                    <div
+                        class="rounded-full w-12 h-12 flex items-center justify-center text-primary-600 bg-primary-600/10">
+
+                    </div>
+                </div>
+                <div class="rounded-b overflow-hidden">
+                    <div>
+                        <apx-chart [series]="chartOptions1.series!" [chart]="chartOptions1.chart!"
+                            [xaxis]="chartOptions1.xaxis!" [stroke]="chartOptions1.stroke!"
+                            [tooltip]="chartOptions1.tooltip!" [dataLabels]="chartOptions1.dataLabels!"
+                            [yaxis]="chartOptions1.yaxis!" [grid]="chartOptions1.grid!"></apx-chart>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="card-3 h-full flex flex-col justify-between relative hover:shadow-lg transition duration-200 ease-out-swift">
+                <div class="flex p-6 flex items-center justify-between gap-6 pb-0">
+                    <div class="ng-tns-c3022845353-115">
+                        <h2 class="headline font-bold m-0 ">76.7k</h2>
+                        <p class="caption text-secondary m-0 ">Page Views</p>
+                    </div>
+                    <div class="rounded-full w-12 h-12 flex items-center justify-center text-primary-600 bg-primary-600/10">
+
+                    </div>
+                </div>
+                <div class="rounded-b overflow-hidden">
+                    <div>
+                        <apx-chart [series]="chartOptions2.series!" [chart]="chartOptions2.chart!"
+                            [xaxis]="chartOptions2.xaxis!" [stroke]="chartOptions2.stroke!"
+                            [tooltip]="chartOptions2.tooltip!" [dataLabels]="chartOptions2.dataLabels!"
+                            [yaxis]="chartOptions2.yaxis!" [grid]="chartOptions2.grid!"></apx-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-dashboard-col">
+            <div class="card-full h-full flex flex-col justify-between relative hover:shadow-lg transition duration-200 ease-out-swift">
+
+                <div class="border-b py-6 px-6 flex items-center card-title">
+                    <h2 class="m-0 title flex-auto">Incident Overview</h2>
+                </div>
+                <div class="rounded-b overflow-hidden">
+                    <div class="px-6 py-4">
+                        <apx-chart [series]="chartOptions3.series!" [chart]="chartOptions3.chart!"
+                            [xaxis]="chartOptions3.xaxis!" [stroke]="chartOptions3.stroke!"
+                            [tooltip]="chartOptions3.tooltip!" [dataLabels]="chartOptions3.dataLabels!"
+                            [yaxis]="chartOptions3.yaxis!" [grid]="chartOptions3.grid!"></apx-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-dashboard-col">
+            <div class="card-full h-full flex flex-col justify-between relative hover:shadow-lg transition duration-200 ease-out-swift">
+
+                <div class="border-b py-6 px-6 flex items-center card-title">
+                    <h2 class="m-0 title flex-auto">Zonewise Resources</h2>
+                </div>
+                <div class="rounded-b overflow-hidden">
+                    <div class="px-6 py-4">
+                        <google-map height="600px" width="100%" [options]="options"> </google-map>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
